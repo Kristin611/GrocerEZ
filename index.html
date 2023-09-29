@@ -1,41 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GrocerEZ</title>
-
-
-<body>
-
-    <header>
-        <h1>My GrocerEZ</h1>
-    </header>
-
-    <nav>
-        <a href="#">Home</a> |
-        <a href="#">Products</a> |
-        <a href="#">Contact</a>
-    </nav>
-
-    <section>
-        <h2>Welcome to My GrocerEZ!</h2>
-        <p>Explore our wide range of recipes and meal prep ideas!.</p>
-        <h3>Featured Products</h3>
-        <ul>
-            <li>GrocerEZ List</li>
-            <li>meal prep</li>
-            <li>I'm in the mood food</li>
-            <li>I'm in the mood for concert food</li>
-        </ul>
-    </section>
-
-
-    <footer>
-        <p>&copy; 2023 My Grocery Store. All rights reserved.</p>
-    </footer>
-
-</body>
-
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe App</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="search-container">
+        <input
+          type="text"
+          placeholder="Type A Dish Name Here.."
+          id="user-inp"
+        />
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="result"></div>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
 </html>
