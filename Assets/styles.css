@@ -1,0 +1,9 @@
+#ingImg {
+    width: 100%;
+
+}
+
+.ingredientImgWrapper {
+    width: 10rem; 
+    border: 1px blue solid;
+}
