@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(173, 206, 125);
+}
+
 #ingImg {
     width: 100%;
 
@@ -6,4 +10,15 @@
 .ingredientImgWrapper {
     width: 10rem; 
     border: 1px blue solid;
+}
+
+#recipe-list {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#ingredientDetails {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }
