@@ -1,41 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GrocerEZ</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+  <body>
+
+    <div class="search-container">
+        <input type="text" id="recipeInput" placeholder="Search for a recipe">
+        <button id="searchButton">Search</button>
+
+        <div id="preferencesContainer">
+            <label>
+                <input type="checkbox" id="vegetarianCheckbox"> Vegetarian
+            </label>
+            <label>
+                <input type="checkbox" id="veganCheckbox"> Vegan
+            </label>
+            <label>
+                <input type="checkbox" id="glutenFreeCheckbox"> Gluten-Free
+            </label>
+            <!-- Add more checkboxes for other dietary preferences -->
+        </div>
 
 
-<body>
-
-    <header>
-        <h1>My GrocerEZ</h1>
-    </header>
-
-    <nav>
-        <a href="#">Home</a> |
-        <a href="#">Products</a> |
-        <a href="#">Contact</a>
-    </nav>
-
-    <section>
-        <h2>Welcome to My GrocerEZ!</h2>
-        <p>Explore our wide range of recipes and meal prep ideas!.</p>
-        <h3>Featured Products</h3>
-        <ul>
-            <li>GrocerEZ List</li>
-            <li>meal prep</li>
-            <li>I'm in the mood food</li>
-            <li>I'm in the mood for concert food</li>
-        </ul>
-    </section>
-
-
-    <footer>
-        <p>&copy; 2023 My Grocery Store. All rights reserved.</p>
-    </footer>
-
-</body>
+    </div>
+    <script src="./script.js"></script>
+    </body>
 
 </html>
