@@ -111,20 +111,51 @@ async function performSearch(recipe, preferences) {
           const clickedId = event.target.id;
           if (event.target.classList.contains('food-option')) {
               console.log('foodOption', clickedId);
-              const endPoint = `https://api.spoonacular.com/recipes/${clickedId}/ingredientWidget.json?apiKey=${apiKey}`;
+              const endPoint = `https://api.spoonacular.com/recipes/${clickedId}/ingredientWidget.json/?addRecipeInformation&apiKey=${apiKey}`;
       
               try {
                   const response = await fetch(endPoint);
                   const ingredients = await response.json();
-      
+                    const ingredientData = ingredients.ingredients.map(ingredient => `
+                    <div>
+                    <div class='ingredientImgWrapper'>
+                    <img id='ingImg' src="https://spoonacular.com/recipeImages/${ingredient.image}" alt="${ingredient.name}" />
+                    </div>
+                    <p>Name: ${ingredient.name}</p>
+                    <p>Amount (metric): ${ingredient.amount.metric.value} ${ingredient.amount.metric.unit}</p>
+                    <p>Amount (US): ${ingredient.amount.us.value} ${ingredient.amount.us.unit}</p>
+                </div>
+                    `)
                   // Display ingredient details in a new div
                   const ingredientDetailsDiv = document.getElementById('ingredientDetails');
-                  ingredientDetailsDiv.innerHTML = JSON.stringify(ingredients);
+                  ingredientDetailsDiv.innerHTML = ingredientData.join('')
+                  console.log(JSON.stringify(ingredients))
+                  
               } catch (error) {
                   console.error('Error fetching ingredient details:', error);
               }
           }
       });
+
+      //function to display chosen recipe
+        // async function displayRecipe() {
+        //    const APIURL = `https://api.spoonacular.com/recipes/${clickedId}/card/?apiKey=21f21f2d600f49239e04c648f8312a58` 
+        //     console.log(APIURL, 'kristin')
+
+        //     try {
+        //         const response = await fetch(APIURL)
+        //         const recipeDetails = await response.json();
+        //         console.log(recipeDetails)
+
+            // for (let i = 0; i < recipeDetails.length; i++) {
+                // let title = document.createElement
+            //}
+        //     }
+
+        
+
+
+        // } 
 
       // Implement your logic to handle the API response (data variable)
       console.log('API Response:', data);
@@ -156,3 +187,14 @@ window.onload = function () {
       // performSearch('', parsedPreferences);
   }
 };
+
+
+
+    // const kristinApiKey = '21f21f2d600f49239e04c648f8312a58'
+    // const apiURL = 
+
+
+
+
+
+//click event for when user clicks on chosen recipe
