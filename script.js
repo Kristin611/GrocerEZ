@@ -1,4 +1,3 @@
-
 //API: add store locator
 
 // (Nick) 1. When I search for a recipe, I can filter recipes by dietary preferences.
@@ -108,26 +107,24 @@ async function performSearch(recipe, preferences) {
           ` 
           recipeList.innerHTML = foodResults  
         }
-            recipeList.addEventListener('click', function(event){
-                const clickedId = event.target.id
-                if (event.target.classList.contains('food-option')) {
-                    console.log('foodOption', clickedId)
-                    const endPoint = `https://api.spoonacular.com/recipes/${clickedId}/ingredientWidget.json&apiKey=${apiKey}`
-                    const headers = new Headers()
-                    headers.append('Content-Type', 'application/json')
-                    const options = {
-                        method:'GET', 
-                        headers: headers
-                    }
-                    fetch(endPoint, options)
-                    .then((res) => {
-                        return res.json()
-                    }) .then((ingredients) =>{
-                        console.log(ingredients)
-                    })
-                }
-            })
-
+        recipeList.addEventListener('click', async function (event) {
+          const clickedId = event.target.id;
+          if (event.target.classList.contains('food-option')) {
+              console.log('foodOption', clickedId);
+              const endPoint = `https://api.spoonacular.com/recipes/${clickedId}/ingredientWidget.json?apiKey=${apiKey}`;
+      
+              try {
+                  const response = await fetch(endPoint);
+                  const ingredients = await response.json();
+      
+                  // Display ingredient details in a new div
+                  const ingredientDetailsDiv = document.getElementById('ingredientDetails');
+                  ingredientDetailsDiv.innerHTML = JSON.stringify(ingredients);
+              } catch (error) {
+                  console.error('Error fetching ingredient details:', error);
+              }
+          }
+      });
 
       // Implement your logic to handle the API response (data variable)
       console.log('API Response:', data);
@@ -159,4 +156,3 @@ window.onload = function () {
       // performSearch('', parsedPreferences);
   }
 };
-
