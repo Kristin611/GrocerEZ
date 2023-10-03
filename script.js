@@ -92,9 +92,48 @@ async function performSearch(recipe, preferences) {
   try {
       const response = await fetch(apiUrl);
       const data = await response.json();
+      const foodOption = document.querySelector('.food-option')
+        const foodData = data.results
+        let foodResults = ''
+        const recipeList = document.getElementById('recipe-list')
+        for (let i = 0; i < foodData.length; i++) {
+          foodResults += `
+          <div>
+            <div>
+                <ul>
+                    <li class='food-option' id='${foodData[i].id}'>${foodData[i].title}</li>
+                </ul>
+            </div>
+          </div>
+          ` 
+          recipeList.innerHTML = foodResults  
+        }
+            recipeList.addEventListener('click', function(event){
+                const clickedId = event.target.id
+                if (event.target.classList.contains('food-option')) {
+                    console.log('foodOption', clickedId)
+                    const endPoint = `https://api.spoonacular.com/recipes/${clickedId}/ingredientWidget.json&apiKey=${apiKey}`
+                    const headers = new Headers()
+                    headers.append('Content-Type', 'application/json')
+                    const options = {
+                        method:'GET', 
+                        headers: headers
+                    }
+                    fetch(endPoint, options)
+                    .then((res) => {
+                        return res.json()
+                    }) .then((ingredients) =>{
+                        console.log(ingredients)
+                    })
+                }
+            })
+
 
       // Implement your logic to handle the API response (data variable)
       console.log('API Response:', data);
+
+
+
   } catch (error) {
       console.error('Error fetching data:', error);
   }
