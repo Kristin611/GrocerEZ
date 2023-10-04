@@ -114,6 +114,7 @@ async function performSearch(recipe, preferences) {
           if (event.target.classList.contains('food-option')) {
               console.log('foodOption', clickedId);
               const endPoint = `https://api.spoonacular.com/recipes/${clickedId}/ingredientWidget.json/?addRecipeInformation&apiKey=${apiKey}`;
+             
       
               try {
                   const response = await fetch(endPoint);
