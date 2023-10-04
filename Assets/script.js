@@ -123,7 +123,7 @@ async function performSearch(recipe, preferences) {
                   const ingredients = await response.json();
                   
                   const recipeView = document.getElementById('recipe-view')
-                  
+                  var ingredientList = []
                     const ingredientData = ingredients.ingredients.forEach(ingredient => {
                     console.log(ingredient)
                         
@@ -139,8 +139,8 @@ async function performSearch(recipe, preferences) {
                     //this is my p-name tag
                     const recipe = document.createElement('p')
                     recipe.innerText = ingredient.name
+                    ingredientList.push(ingredient.name);
                     
-
 
                         //this is my span-metric tag inside p
                     const metrics = document.createElement('p')
@@ -171,7 +171,8 @@ async function performSearch(recipe, preferences) {
                     // ${ingredient.amount.us.value} ${ingredient.amount.us.unit}
                 
               })
-              
+              localStorage.setItem("ingredients", JSON.stringify(ingredientList));
+              //This will pull the ingredients into local storage.
                   // Display ingredient details in a new div
                 //   const ingredientDetailsDiv = document.getElementById('ingredientDetails');
                 //   ingredientDetailsDiv.innerHTML = ingredientData.join('')
