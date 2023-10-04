@@ -78,7 +78,7 @@ async function handleSearch(event) {
 
 // Function to perform the recipe search
 async function performSearch(recipe, preferences) {
-  const apiKey = '40d6fe324c1c4704ae9a77905aa534f1'; 
+  const apiKey = '21f21f2d600f49239e04c648f8312a58'; 
   console.log("u clicked me")
 
 
@@ -116,23 +116,66 @@ async function performSearch(recipe, preferences) {
               const endPoint = `https://api.spoonacular.com/recipes/${clickedId}/ingredientWidget.json/?addRecipeInformation&apiKey=${apiKey}`;
              
       
+              
+
               try {
                   const response = await fetch(endPoint);
                   const ingredients = await response.json();
-                    const ingredientData = ingredients.ingredients.map(ingredient => `
-                    <div>
-                    <div class='ingredientImgWrapper'>
-                    <img id='ingImg' src="https://spoonacular.com/recipeImages/${ingredient.image}" alt="${ingredient.name}" />
-                    </div>
-                    <p>Name: ${ingredient.name}</p>
-                    <p>Amount (metric): ${ingredient.amount.metric.value} ${ingredient.amount.metric.unit}</p>
-                    <p>Amount (US): ${ingredient.amount.us.value} ${ingredient.amount.us.unit}</p>
-                </div>
-                    `)
+                  
+                  const recipeView = document.getElementById('recipe-view')
+                  
+                    const ingredientData = ingredients.ingredients.forEach(ingredient => {
+                    console.log(ingredient)
+                        
+                    
+                    
+
+
+                        //my image display
+                    const img = document.createElement('img')
+                    img.setAttribute('src', `https://spoonacular.com/recipeImages/${ingredient.image}`)
+                    
+
+                    //this is my p-name tag
+                    const recipe = document.createElement('p')
+                    recipe.innerText = ingredient.name
+                    
+
+
+                        //this is my span-metric tag inside p
+                    const metrics = document.createElement('p')
+                    metrics.innerText = ingredient.amount.metric.value 
+
+                    const US = document.createElement('p')
+                    US.innerText = ingredient.amount.us.value 
+
+                    recipeView.appendChild(img)
+                    recipeView.appendChild(recipe)
+                    recipeView.appendChild(metrics)
+                    recipeView.appendChild(US)
+                    
+
+
+
+
+                    
+
+                   
+                    // const ingUrl = `https://spoonacular.com/recipeImages/${ingredient.image}` 
+                    // const imgAlt = `${ingredient.name}`
+                    
+                    
+
+                    // ${ingredient.name}
+                    // ${ingredient.amount.metric.value} ${ingredient.amount.metric.unit}
+                    // ${ingredient.amount.us.value} ${ingredient.amount.us.unit}
+                
+              })
+              
                   // Display ingredient details in a new div
-                  const ingredientDetailsDiv = document.getElementById('ingredientDetails');
-                  ingredientDetailsDiv.innerHTML = ingredientData.join('')
-                  console.log(JSON.stringify(ingredients))
+                //   const ingredientDetailsDiv = document.getElementById('ingredientDetails');
+                //   ingredientDetailsDiv.innerHTML = ingredientData.join('')
+                //   console.log(JSON.stringify(ingredients))
                   
               } catch (error) {
                   console.error('Error fetching ingredient details:', error);

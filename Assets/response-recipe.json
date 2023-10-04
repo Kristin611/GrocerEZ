@@ -1,0 +1,14 @@
+{
+    "name": "dried bell pepper",
+    "image": "dried-arbol-chiles.jpg",
+    "amount": {
+        "metric": {
+            "value": 1,
+            "unit": ""
+        },
+        "us": {
+            "value": 1,
+            "unit": ""
+        }
+    }
+}
