@@ -139,20 +139,30 @@ async function performSearch(recipe, preferences) {
                     //this is my p-name tag
                     const recipe = document.createElement('p')
                     recipe.innerText = ingredient.name
-                    
-
+                
 
                         //this is my span-metric tag inside p
                     const metrics = document.createElement('p')
-                    metrics.innerText = ingredient.amount.metric.value 
+                    metrics.innerText = 'Metric: ' + ingredient.amount.metric.value 
+
+                        //this is my p-unitMetric tag
+                    const unitMetric = document.createElement('p')
+                    unitMetric.innerText = ingredient.amount.metric.unit
 
                     const US = document.createElement('p')
-                    US.innerText = ingredient.amount.us.value 
+                    US.innerText = 'US: ' + ingredient.amount.us.value 
+
+                        //this is my p-unitUS tag
+                    const unitUS = document.createElement('p')
+                    unitUS.innerText = ingredient.amount.us.unit
 
                     recipeView.appendChild(img)
                     recipeView.appendChild(recipe)
-                    recipeView.appendChild(metrics)
                     recipeView.appendChild(US)
+                    recipeView.appendChild(unitUS)
+                    recipeView.appendChild(metrics)
+                    recipeView.appendChild(unitMetric)
+                    
                     
 
 
@@ -183,25 +193,6 @@ async function performSearch(recipe, preferences) {
           }
       });
 
-      //function to display chosen recipe
-        // async function displayRecipe() {
-        //    const APIURL = `https://api.spoonacular.com/recipes/${clickedId}/card/?apiKey=21f21f2d600f49239e04c648f8312a58` 
-        //     console.log(APIURL, 'kristin')
-
-        //     try {
-        //         const response = await fetch(APIURL)
-        //         const recipeDetails = await response.json();
-        //         console.log(recipeDetails)
-
-            // for (let i = 0; i < recipeDetails.length; i++) {
-                // let title = document.createElement
-            //}
-        //     }
-
-        
-
-
-        // } 
 
       // Implement your logic to handle the API response (data variable)
       console.log('API Response:', data);
@@ -235,12 +226,3 @@ window.onload = function () {
 };
 
 
-
-    
-    
-
-
-
-
-
-//click event for when user clicks on chosen recipe
