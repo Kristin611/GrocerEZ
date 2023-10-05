@@ -107,6 +107,7 @@ async function performSearch(recipe, preferences) {
             `;
             recipeList.innerHTML = foodResults;
         }
+
         recipeList.addEventListener("click", async function (event) {
             const clickedId = event.target.id;
             if (event.target.classList.contains("food-option")) {
@@ -201,6 +202,7 @@ async function performSearch(recipe, preferences) {
 
         // }
 
+
         // Implement your logic to handle the API response (data variable)
         console.log("API Response:", data);
     } catch (error) {
@@ -210,6 +212,8 @@ async function performSearch(recipe, preferences) {
 
 // Add click event to the search button
 document.getElementById("searchButton").addEventListener("click", handleSearch);
+
+
 
 // Load user preferences from local storage on page load
 window.onload = function () {
@@ -230,4 +234,4 @@ window.onload = function () {
     }
 };
 
-//click event for when user clicks on chosen recipe
+
