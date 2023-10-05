@@ -134,6 +134,7 @@ async function performSearch(recipe, preferences) {
                         //my image display
                     const img = document.createElement('img')
                     img.setAttribute('src', `https://spoonacular.com/recipeImages/${ingredient.image}`)
+                    img.setAttribute('alt', 'image of ingredient')
                     
 
                     //this is my p-name tag
@@ -206,6 +207,54 @@ async function performSearch(recipe, preferences) {
 
 // Add click event to the search button
 document.getElementById('searchButton').addEventListener('click', handleSearch);
+
+//Add click event to the EZ list button
+// document.getElementById('ezBtn').addEventListener('click', async function() {
+
+// }); 
+
+async function displaySL() {
+    // const clickedId = event.target.id;
+    // const apiKEY = '21f21f2d600f49239e04c648f8312a58';
+
+    
+    const apiURL = `https://api.spoonacular.com/recipes/${clickedId}/ingredientWidget.json/?addRecipeInformation&apiKey=${apiKey}`
+
+    try { 
+        
+        let response = await fetch(apiURL)
+        let data = await response.json();
+        console.log(data, 'kristin')
+
+        const shoppingList = document.getElementById('shoppingList')
+        const foodList = data.foodList;
+
+        //create an unordered list
+        const ulSL = document.createElement('ul')
+
+        //create list items for each ingredient
+        ingredients.forEach(ingredient => {
+            const liEl = document.createElement('li');
+            liEl.textContent = ingredient.name;
+
+            //Add a click event listener to toggle the strike-through class
+            liEl.addEventListener('click', () => {
+                liEl.classList.toggle('strikethrough')
+            })
+
+            ulSL.appendChild(liEl)
+        });
+
+            //clear the existing content and append the new list
+            shoppingList.innerHTML = '';
+            shoppingList.appendChild(ulSL)
+
+
+    }
+    catch (error) {
+        console.error('Error:', error);
+    }
+} 
 
 
 // Load user preferences from local storage on page load
