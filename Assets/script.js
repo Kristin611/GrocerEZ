@@ -163,10 +163,7 @@ async function performSearch(recipe, preferences) {
                     function addToList(){
                         console.log("easy list")
                         localStorage.setItem("ingredients", JSON.stringify(ingredientList));
-                        const showIngredientsBtn=document.createElement("button")
-                        showIngredientsBtn.innerText="View My EZ list"
-                        const showButtonContainer=document.querySelector(".add-to-list-btn")
-                        showButtonContainer.appendChild(showIngredientsBtn)
+                        
                       }
                     const easyButtOn= document.getElementById('easyButton')
                     easyButtOn.addEventListener(`click`, function(event){
@@ -185,22 +182,7 @@ async function performSearch(recipe, preferences) {
             }
         });
 
-        //function to display chosen recipe
-        // async function displayRecipe() {
-        //    const APIURL = `https://api.spoonacular.com/recipes/${clickedId}/card/?apiKey=21f21f2d600f49239e04c648f8312a58`
-        //     console.log(APIURL, 'kristin')
 
-        //     try {
-        //         const response = await fetch(APIURL)
-        //         const recipeDetails = await response.json();
-        //         console.log(recipeDetails)
-
-        // for (let i = 0; i < recipeDetails.length; i++) {
-        // let title = document.createElement
-        //}
-        //     }
-
-        // }
 
 
         // Implement your logic to handle the API response (data variable)
@@ -233,5 +215,16 @@ window.onload = function () {
         // performSearch('', parsedPreferences);
     }
 };
+    const showList = document.getElementById("showList");
+    showList.addEventListener("click", function (event) {
+        event.preventDefault();
+        const ingredientList = JSON.parse(localStorage.getItem("ingredients"));
+        const list = document.getElementById("list");
+        for (let i = 0; i < ingredientList.length; i++) {
+            const li = document.createElement("li");
+            li.innerText = ingredientList[i];
+            list.appendChild(li);
+        }
+    })
 
 
