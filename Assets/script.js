@@ -238,8 +238,4 @@ window.onload = function () {
 
             li.innerText = ingredientList[i];
             list.appendChild(li);
-        }
-
-    })
-
-
+        })
