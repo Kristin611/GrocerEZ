@@ -152,6 +152,10 @@ padding: 10px 20px;
     width: 100%;
 
 }
+.listItem:hover {
+cursor: pointer;
+}
+
 
 .img-wrapper {
     width: 10rem; 
@@ -167,5 +171,5 @@ padding: 10px 20px;
 }
 
 .strikethrough {
-    text-decoration: line-through;
+    text-decoration: line-through; 
 }

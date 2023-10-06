@@ -222,9 +222,18 @@ window.onload = function () {
         const list = document.getElementById("list");
         for (let i = 0; i < ingredientList.length; i++) {
             const li = document.createElement("li");
-            li.innerText = ingredientList[i];
+            li.innerText = ingredientList[i]; 
+            li.className += "listItem"
             list.appendChild(li);
         }
+        list.addEventListener("click", function (event) {
+            event.preventDefault();
+            if (event.target.classList.contains("listItem")){
+                event.target.style.textDecoration = "line-through";
+                
+            }
+            
+        })
     })
 
 
