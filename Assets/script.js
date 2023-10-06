@@ -120,9 +120,13 @@ async function performSearch(recipe, preferences) {
 
                     const recipeView = document.getElementById("recipe-view");
                     var ingredientList = [];
-                    const ingredientData = ingredients.ingredients.forEach(
+                    ingredients.ingredients.forEach(
                         (ingredient) => {
                             console.log(ingredient);
+
+                            //create a card container for each ingredient
+                            const card = document.createElement('div')
+                            card.classList.add('card')
 
                             //my image display
                             const img = document.createElement("img");
@@ -131,22 +135,33 @@ async function performSearch(recipe, preferences) {
                                 `https://spoonacular.com/recipeImages/${ingredient.image}`
                             );
 
+                            const cardBody = document.createElement('div')
+
                             //this is my p-name tag
                             const recipe = document.createElement("p");
+                            recipe.classList.add('card-text')
                             recipe.innerText = ingredient.name;
                             ingredientList.push(ingredient.name);
 
+
+                        
+
                             //this is my span-metric tag inside p
-                            const metrics = document.createElement("p");
+                            const metrics = document.createElement("span");
                             metrics.innerText = ingredient.amount.metric.value;
 
                             const US = document.createElement("p");
                             US.innerText = ingredient.amount.us.value;
 
-                            recipeView.appendChild(img);
-                            recipeView.appendChild(recipe);
-                            recipeView.appendChild(metrics);
-                            recipeView.appendChild(US);
+                            cardBody.appendChild(recipe)
+                            cardBody.appendChild(metrics)
+                            cardBody.appendChild(US)
+                            card.appendChild(img)
+                            card.appendChild(cardBody)
+                            recipeView.appendChild(card)
+
+
+                            
 
                             // const ingUrl = `https://spoonacular.com/recipeImages/${ingredient.image}`
                             // const imgAlt = `${ingredient.name}`
