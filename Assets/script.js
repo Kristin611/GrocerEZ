@@ -240,6 +240,6 @@ window.onload = function () {
             list.appendChild(li);
         }
 
-    })
+    )
 
 
