@@ -222,6 +222,7 @@ window.onload = function () {
         const list = document.getElementById("list");
         for (let i = 0; i < ingredientList.length; i++) {
             const li = document.createElement("li");
+
             li.innerText = ingredientList[i]; 
             li.className += "listItem"
             list.appendChild(li);
@@ -234,6 +235,11 @@ window.onload = function () {
             }
             
         })
+
+            li.innerText = ingredientList[i];
+            list.appendChild(li);
+        }
+
     })
 
 
