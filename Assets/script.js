@@ -162,14 +162,14 @@ async function performSearch(recipe, preferences) {
 
                             //this is my span-metric tag inside p
                             const metrics = document.createElement("span");
-                            metrics.innerText = ingredient.amount.metric.value;
+                            metrics.innerText = 'Metric: ' + ingredient.amount.metric.value;
 
                             const US = document.createElement("p");
-                            US.innerText = ingredient.amount.us.value;
+                            US.innerText = 'US: ' + ingredient.amount.us.value;
 
                             cardBody.appendChild(recipe)
-                            cardBody.appendChild(metrics)
                             cardBody.appendChild(US)
+                            cardBody.appendChild(metrics)
                             card.appendChild(img)
                             card.appendChild(cardBody)
                             recipeView.appendChild(card)
