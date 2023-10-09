@@ -148,7 +148,7 @@ padding: 10px 20px;
   gap: 20px;
 }
 
-#ingImg {
+.ingImg {
     width: 100%;
 
 }
@@ -162,14 +162,30 @@ cursor: pointer;
     border: 1px blue solid;
 }
 
-#recipe-view {
-    display: flex;
-    flex-grow: 1;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 200px;
-}
-
 .strikethrough {
     text-decoration: line-through; 
 }
+
+#recipe-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }
+
+  .card {
+    margin: 10px;
+    padding: 1rem;
+    height: fit-content;
+    max-width: 18rem;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card-text {
+    color: red;
+  }
