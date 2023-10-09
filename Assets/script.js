@@ -44,9 +44,9 @@
 
 //&apiKey=${APIKey}
 
-// Kristin's API key = '21f21f2d600f49239e04c648f8312a58'
-// Carly's API key = 6d5284f3fe6f45dcac346ce9ae990745
-//Ja's API key
+// Kristin's API key = '21f21f2d600f49239e04c648f8312a58' used
+// Carly's API key = 6d5284f3fe6f45dcac346ce9ae990745 
+//Ja's API key = 8b1a8d9e424e4917b6ede45953ef9424
 
 async function handleSearch(event) {
     console.log("u clicked me");
@@ -77,7 +77,7 @@ async function handleSearch(event) {
 
 // Function to perform the recipe search
 async function performSearch(recipe, preferences) {
-    const apiKey = "21f21f2d600f49239e04c648f8312a58";
+    const apiKey = "6d5284f3fe6f45dcac346ce9ae990745";
     console.log("u clicked me");
 
     const preferencesArray = Object.entries(preferences)
@@ -108,13 +108,26 @@ async function performSearch(recipe, preferences) {
             recipeList.innerHTML = foodResults;
         }
 
+        function clearIngredients() {
+            const clearIng = document.querySelector('#recipe-view')
+            clearIng.innerHTML = ''
+        }
+
+        // function clearList() {
+        //     localStorage.clear()
+        // }
+ 
+
         recipeList.addEventListener("click", async function (event) {
+            
             const clickedId = event.target.id;
             if (event.target.classList.contains("food-option")) {
+                
                 console.log("foodOption", clickedId);
                 const endPoint = `https://api.spoonacular.com/recipes/${clickedId}/ingredientWidget.json/?addRecipeInformation&apiKey=${apiKey}`;
 
                 try {
+                    clearIngredients();
                     const response = await fetch(endPoint);
                     const ingredients = await response.json();
 
@@ -130,9 +143,10 @@ async function performSearch(recipe, preferences) {
 
                             //my image display
                             const img = document.createElement("img");
+                            img.classList.add('ingImg')
                             img.setAttribute(
                                 "src",
-                                `https://spoonacular.com/recipeImages/${ingredient.image}`
+                                `https://spoonacular.com/cdn/ingredients_100x100/${ingredient.image}`
                             );
 
                             const cardBody = document.createElement('div')
@@ -159,16 +173,6 @@ async function performSearch(recipe, preferences) {
                             card.appendChild(img)
                             card.appendChild(cardBody)
                             recipeView.appendChild(card)
-
-
-                            
-
-                            // const ingUrl = `https://spoonacular.com/recipeImages/${ingredient.image}`
-                            // const imgAlt = `${ingredient.name}`
-
-                            // ${ingredient.name}
-                            // ${ingredient.amount.metric.value} ${ingredient.amount.metric.unit}
-                            // ${ingredient.amount.us.value} ${ingredient.amount.us.unit}
                             
 
 
