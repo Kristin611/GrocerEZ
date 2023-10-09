@@ -198,6 +198,7 @@ async function performSearch(recipe, preferences) {
                     easyButtOn.addEventListener(`click`, function(event){
                         event.preventDefault()
                         addToList()
+                        // alert('Added to EZ List!')
                     })
                     
                     //This will pull the ingredients into local storage.
