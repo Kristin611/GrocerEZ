@@ -199,6 +199,15 @@ async function performSearch(recipe, preferences) {
                         event.preventDefault()
                         addToList()
                         // alert('Added to EZ List!')
+                        const notification = document.querySelector('.notification')
+                        const interval = 1000
+                        const flashNotification = setInterval(() => {
+                            notification.classList.remove('hide') 
+                        }, interval)
+                        setTimeout(()=> {
+                            clearInterval(flashNotification)
+                            notification.classList.add('hide')
+                        }, 5000)
                     })
                     
                     //This will pull the ingredients into local storage.
@@ -271,5 +280,7 @@ window.onload = function () {
         }
 
     )
+
+   
 
 
