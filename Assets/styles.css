@@ -213,6 +213,7 @@ cursor: pointer;
 
   .food-option:hover {
     background-color: rgb(244, 51, 8);
+    cursor: pointer;
   }
 
   .metric-text {
@@ -221,4 +222,18 @@ cursor: pointer;
 
   .us-text {
     color: rgb(127, 150, 94);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .ez-div {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .notification {
+    background-color:  rgb(223, 86, 55);
+    padding: 1rem;
   }
