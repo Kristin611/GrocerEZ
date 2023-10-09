@@ -85,6 +85,7 @@ nav {
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #searchButton:hover {
@@ -111,6 +112,7 @@ nav {
   gap: 1rem;
   flex-direction: column;
   justify-content: flex-start;
+  
 }
 
 #easyButton {
@@ -122,6 +124,7 @@ padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
   width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 #showList{
@@ -133,7 +136,9 @@ padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s;
   width: 300px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
+
 #showList:hover {
   background-color: rgb(244, 51, 8);
 }
@@ -179,13 +184,41 @@ cursor: pointer;
     padding: 1rem;
     height: fit-content;
     max-width: 18rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
 
   .card-container {
     display: flex;
     flex-wrap: wrap;
+    background-color:  rgb(223, 86, 55);
+    border-radius: .5rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
 
   .card-text {
-    color: red;
+    color: rgb(10, 9, 9);
+    font-weight: bold;
+
+  }
+
+  .food-option {
+    /* font-weight: bold; */
+    background-color: rgb(223, 86, 55);
+    padding: 1rem;
+    list-style: none;
+    border-radius: .5rem;
+    color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .food-option:hover {
+    background-color: rgb(244, 51, 8);
+  }
+
+  .metric-text {
+    color: rgb(223, 86, 55);
+  }
+
+  .us-text {
+    color: rgb(127, 150, 94);
   }
