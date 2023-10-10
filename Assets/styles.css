@@ -65,7 +65,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #0d47a1
+  color: #ffffff
 }
 
  /* 
@@ -286,6 +286,3 @@ cursor: pointer;
   height: 50px;
 }
 
-a {
-  text-decoration: none;
-}
