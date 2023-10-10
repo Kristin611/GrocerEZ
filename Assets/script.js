@@ -42,8 +42,6 @@
 
 //https://api.spoonacular.com/recipes/complexSearch?query=${searchValue}&chainonsomeshit
 
-//&apiKey=${APIKey}
-
 // Kristin's API key = '21f21f2d600f49239e04c648f8312a58' used
 // Carly's API key = 6d5284f3fe6f45dcac346ce9ae990745 
 //Ja's API key = 8b1a8d9e424e4917b6ede45953ef9424
@@ -112,10 +110,6 @@ async function performSearch(recipe, preferences) {
             const clearIng = document.querySelector('#recipe-view')
             clearIng.innerHTML = ''
         }
-
-        // function clearList() {
-        //     localStorage.clear()
-        // }
  
 
         recipeList.addEventListener("click", async function (event) {
@@ -177,9 +171,7 @@ async function performSearch(recipe, preferences) {
 
                             cardBody.appendChild(recipe)
                             cardBody.appendChild(US)
-                            //recipeView.appendChild(unitUS)
                             cardBody.appendChild(metrics)
-                            //recipeView.appendChild(unitMetric)
                             card.appendChild(img)
                             card.appendChild(cardBody)
                             recipeView.appendChild(card)
@@ -198,7 +190,7 @@ async function performSearch(recipe, preferences) {
                     easyButtOn.addEventListener(`click`, function(event){
                         event.preventDefault()
                         addToList()
-                        // alert('Added to EZ List!')
+                        // To alert users that the ingredients have been added to their list
                         const notification = document.querySelector('.notification')
                         const interval = 1000
                         const flashNotification = setInterval(() => {
