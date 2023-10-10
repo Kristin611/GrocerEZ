@@ -234,6 +234,7 @@ cursor: pointer;
   }
 
   .notification {
+
     background-color:  rgb(244, 51, 8);
     color: white;
     padding: .5rem;
@@ -241,3 +242,17 @@ cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 
   }
+
+    background-color:  rgb(223, 86, 55);
+    padding: 1rem;
+  }
+
+.weather-info {
+  margin-left: 1300px;
+}
+
+.Weather-icon {
+  width: 50px;
+  height: 50px;
+}
+
