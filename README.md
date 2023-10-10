@@ -1,22 +1,19 @@
 # GrocerEZ
 
-## User Story
+## Description
 
-As a home cook, I want to find recipes based on specific criteria and generate a shopping list so that I can easily mark items off as I shop at the grocery store. 
+We created the application, GrocerEZ, to give home cooks a seamless way to shop for ingredients from a recipe of their choosing at the grocery store.
 
-## Acceptance Criteria
+Using the app, home cooks can search for recipes based off of their food and taste preferences, as well as dietary restrictions. Once they choose a recipe that they like, they can add the ingredients to an EZ shopping list. The application will generate a shopping list of the ingredients. And while they are shopping, they can easily mark off items as they add them to their cart at the grocery store. 
 
-GIVEN a GrocerEZ dashboard, 
-WHEN I search for a recipe,
-THEN I can filter recipes by ingredients, name, cuisine type, dietary preferences, and/or preparation and cook time. 
-WHEN I select a recipe,
-THEN I can view the recipe’s ingredients, preparation steps, and serving sizes.
-WHEN I select a recipe that I like,
-THEN I can add it to my personal collection or meal planner for future reference. 
-WHEN I add a recipe to my personal collection,
-THEN I can generate a shopping list that includes all of the ingredients needed for the selected recipe. 
-WHEN I view my shopping list,
-THEN I can remove items I already have at home or make adjustments to quantities.
-WHEN I am shopping at the grocery store,
-THEN I can mark items off my list as I add them to my cart.
+Because the weather temperatures often dictate our food choices and cravings, we included a weather widget in our application. This way, users can see in real-time what the weather is and use this information to help them decided what kind of recipes they want to search for.
+
+## Technologies
+
+The APIs that we used for our application are Spoonacular and OpenWeather. We used Spoonacular to retrieve recipe and ingredient data for our app. We used OpenWeather to retreive weather data for our app.
+
+Preview our application below:
+
+
+
 
