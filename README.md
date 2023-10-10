@@ -14,6 +14,8 @@ The APIs that we used for our application are Spoonacular and OpenWeather. We us
 
 Preview our application below:
 
+<img width="1267" alt="Screenshot 2023-10-10 at 10 33 34 AM" src="https://github.com/Kristin611/GrocerEZ/assets/131815565/c1019da9-6942-4637-bb99-6b7fbc70746f">
+
 
 
 
