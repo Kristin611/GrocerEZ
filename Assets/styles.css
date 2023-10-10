@@ -274,9 +274,8 @@ cursor: pointer;
 
   }
 
-    background-color:  rgb(223, 86, 55);
-    padding: 1rem;
-  }
+
+    
 
 .weather-info {
   margin-left: 1300px;
@@ -287,3 +286,6 @@ cursor: pointer;
   height: 50px;
 }
 
+a {
+  text-decoration: none;
+}
