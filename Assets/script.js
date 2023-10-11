@@ -31,7 +31,7 @@ async function handleSearch(event) {
 
 // Function to perform the recipe search
 async function performSearch(recipe, preferences) {
-    const apiKey = "6d5284f3fe6f45dcac346ce9ae990745";
+    const apiKey = "8b1a8d9e424e4917b6ede45953ef9424";
     console.log("u clicked me");
 
     const preferencesArray = Object.entries(preferences)
