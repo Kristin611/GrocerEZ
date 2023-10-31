@@ -18,4 +18,8 @@ Preview our application below:
 
 https://kristin611.github.io/GrocerEZ/
 
+## Sources
+
+We would like to acknowledge and thank our instructor, Victor Villacis, and teaching assistant, Rene Trevino, for helping us develop our code for this project. 
+
 
